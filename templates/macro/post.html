@@ -1,0 +1,95 @@
+
+{% macro PostPreview(number) %}
+
+<style>
+
+.post-preview {
+    display: flex;
+    flex-direction: row;
+
+    width: 80%;
+
+    gap: 10px;
+
+    margin: 0px 2% 0 2%;
+    padding: 10px 15px;
+    height: 150px;
+
+    font-size: larger;
+
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    align-items: center;
+}
+
+.post-preview .book-pic {
+    width: 15%;
+    height: 100%;
+}
+
+.post-preview .book-info a {
+    width: 10%;
+}
+
+.post-preview .book-info .post-button img {
+    width: 25px;
+    height: 25px;
+}
+
+.post-preview .book-info {
+    width: 15%;
+    height: 100%;
+}
+
+.post-preview .book-info .post-title {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.post-preview .book-info .post-desc {
+    width: 500%;
+}
+
+</style>
+
+
+<div class="post-preview">
+
+    <img class="book-pic" src="#">
+
+    <div class="book-info">
+
+        <div class="post-user">
+            <small>@user{{number}}</small>
+        </div>
+
+        <div class="post-title">
+            <h3> <b>Title of the Book {{number}}</b> </h3>
+        </div>
+
+        <div class="post-desc">
+            <p>
+                This post discusses various aspects of the topic in detail, providing insights and opinions from
+                different
+            </p>
+        </div>
+
+        <div class="post-button">
+            <a href="#" id="upvote-click" class="post-button"> 
+                <img src="{{ url_for('serve_assets', filename='icons/upvote.png') }}"> 
+            </a>
+            <a href="#" id="downvote-click class="post-button"> 
+                <img src="{{ url_for('serve_assets', filename='icons/downvote.png') }}"> 
+            </a>
+            <a href="#" id="comment-click" class="post-button"> 
+                <img src="{{ url_for('serve_assets', filename='icons/post_comment.png') }}"> 
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endmacro %}

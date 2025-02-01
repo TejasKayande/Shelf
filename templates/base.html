@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <title>Shelf</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+
+    {% block css %} {% endblock %}
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo-section"> 
+                <a href="#"> <img src="{{ url_for('serve_assets', filename='icons/menu.png') }}"> </a>
+                <a href="/" class="logo-icon"> <h3>Shelf</h3> </a>
+            </div>
+
+            <div class="user-section"> 
+                <a href="#"> <img src="{{ url_for('serve_assets', filename='icons/message.png') }}"> </a>
+                <a href="#"> <img src="{{ url_for('serve_assets', filename='icons/add.png') }}"> </a>
+                <a href="#"> <img src="{{ url_for('serve_assets', filename='icons/notification.png') }}"> </a>
+                <a href="#"> <img src="{{ url_for('serve_assets', filename='icons/profile.png') }}"> </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="menu">
+            {% block menu %} {% endblock %}
+        </div>
+
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+
+        <div class="sidebar">
+            {% block sidebar %} {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+</body>

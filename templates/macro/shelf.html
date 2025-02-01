@@ -1,0 +1,31 @@
+
+{% macro ShelfPreview(number) %}
+
+<style>
+
+    .shelf-preview {
+        width: 40%;
+        border: 1px solid;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        align-items: center;
+        text-align: center;
+    }
+
+    .shelf-preview a {
+        background-color: lightblue;
+    }
+
+</style>
+
+<div class="shelf-preview">
+    <h3>Shelf Title</h3>
+    <small><a href="#">follow</a></small>
+    <p> some thing to say about the shelf</p>
+</div>
+
+{% endmacro %}

@@ -1,0 +1,47 @@
+
+{% macro BoardPreview(number) %}
+
+<style>
+
+    .board-preview {
+
+        width: 100%;
+        padding-top: 2%;
+        border: 1px solid;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        align-items: center;
+        text-align: center;
+    }
+
+    .board-preview a {
+        background-color: lightblue;
+    }
+
+    .board-preview .board-profile-pic {
+
+        width: 30%;
+        height: 55%;
+    }
+
+</style>
+
+<div class="board-preview">
+
+    <img class="board-profile-pic" src="#">
+
+    <div>
+        <strong>Board Title</strong>
+        <small><a href="#">follow</a></small>
+    </div>
+
+    <small>1000 members</small>
+    <h4> Currently Reading: <i>The Book name</i></h4>
+    <p> some thing to say about the shelf</p>
+</div>
+
+{% endmacro %}

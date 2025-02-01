@@ -1,0 +1,37 @@
+
+.content {
+
+    margin-left: 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    width: 70%;
+    height: 100%;
+    border: 1px solid blue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    align-items: center;
+
+    overflow-y: auto;
+
+    transform: translateY(50px);
+}
+
+.content .filters-section {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    transform: translateY(40%);
+    position: sticky;
+
+    position: sticky;
+}
+
+.content .filters-section a {
+    color: darkblue;
+}

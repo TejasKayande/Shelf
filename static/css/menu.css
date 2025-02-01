@@ -1,0 +1,18 @@
+
+.menu {
+
+    padding-top: 20px;
+    padding-left: 20px;
+
+    width: 10%;
+    height: calc(100vh - 50px);
+
+    position: fixed;
+    border: 1px solid pink;
+
+    transform: translateY(50px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

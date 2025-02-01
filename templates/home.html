@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+{% from 'macro/post.html' import PostPreview %}
+{% from 'macro/shelf.html' import ShelfPreview %}
+{% from 'macro/menu.html' import Menu %}
+
+
+{% block css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+{% endblock %}
+
+
+
+{% block menu %} 
+
+    {{Menu()}}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="filters-section">
+        <a href="/ExploreShelfs">Shelfs</a>
+        <a href="/ExploreBoards">Books</a>
+        <a href="#">Boards</a>
+    </div>
+
+    {% for i in range(30) %}
+
+        {% set rand = range(1,10) | random %}
+
+        {% if rand == 1 and i > 1 %} 
+
+            <small>recommended shelf</small>
+            <div style="display:flex;flex-direction:row;justify-content:space-between;">
+                {{ShelfPreview(i+1)}}
+                {{ShelfPreview(i+1)}}
+            </div>
+
+        {% else %}
+
+            {{PostPreview(i+1)}}
+
+        {% endif %}
+
+    {%endfor%}
+
+{% endblock %}
+
+
+
+{% block sidebar %}
+
+{% endblock %}
