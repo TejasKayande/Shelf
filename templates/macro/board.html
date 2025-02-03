@@ -6,7 +6,7 @@
     .board-preview {
 
         width: 100%;
-        padding-top: 2%;
+        padding: 2%;
         border: 1px solid;
 
         display: flex;
@@ -23,7 +23,6 @@
     }
 
     .board-preview .board-profile-pic {
-
         width: 30%;
         height: 55%;
     }
@@ -32,7 +31,7 @@
 
 <div class="board-preview">
 
-    <img class="board-profile-pic" src="#">
+    <img class="board-profile-pic" src="{{ url_for('serve_assets', filename='cover.jpg') }}"> 
 
     <div>
         <strong>Board Title</strong>
@@ -40,8 +39,13 @@
     </div>
 
     <small>1000 members</small>
-    <h4> Currently Reading: <i>The Book name</i></h4>
-    <p> some thing to say about the shelf</p>
+
+    <h4> Currently Reading:</h4><i>The Book name</i>
+
+    <p> 
+        something descriptive about the board and its intentions, also some catchy lines to attract new members<br>
+        something descriptive about the board and its intentions, also some catchy lines to attract new members<br>
+    </p>
 </div>
 
 {% endmacro %}
