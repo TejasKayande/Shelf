@@ -16,6 +16,9 @@ def serve_assets(filename):
     return send_from_directory(os.path.join(app.root_path, 'assets'), filename)
 
 
+@app.route("/ShelfPage")
+def shelfpage():
+    return render_template('shelfpage.html')
 
 @app.route("/ExploreShelfs")
 def exploreshelfs():

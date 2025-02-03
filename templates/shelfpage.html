@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% from 'macro/menu.html' import Menu %}
+
+{% block css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/shelfpage.css') }}">
+{% endblock %}
+
+
+
+{% block menu %} 
+
+{{Menu()}}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="shelf-title"> 
+    <h1>Science</h1>
+    <small>100 followers</small>
+    <p>book count: 50</p>
+</div>
+
+<div class="shelf-content"> 
+
+{% for i in range(50) %}
+
+    <p>Book {{i}} -- Author {{i}}</p>
+
+{%endfor%}
+
+</div>
+
+{% endblock %}
+
+
+
+{% block sidebar %}
+
+<p>hhere is some information about the shelf herehere is some information about the shelf her
+    eere is some information about the shelf here</p>
+{% endblock %}

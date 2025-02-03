@@ -1,21 +1,21 @@
 
 {% extends 'base.html' %}
+{% from 'macro/menu.html' import Menu %}
+{% from 'macro/filter.html' import ContentFilter %}
 {% from 'macro/post.html' import PostPreview %}
 {% from 'macro/shelf.html' import ShelfPreview %}
-{% from 'macro/menu.html' import Menu %}
+{% from 'macro/board.html' import BoardPreview %}
 
 
 {% block css %} 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
 
 
 {% block menu %} 
 
-    {{Menu()}}
+{{Menu()}}
 
 {% endblock %}
 
@@ -23,36 +23,28 @@
 
 {% block content %}
 
-    <div class="filters-section">
-        <a href="/ExploreShelfs">Shelfs</a>
-        <a href="/ExploreBoards">Books</a>
-        <a href="#">Boards</a>
+{{ContentFilter()}}
+
+<div class="home-recommendation"> 
+    <div class="shelf-recommendation"> 
+        {{ShelfPreview(1)}} {{ShelfPreview(2)}} {{ShelfPreview(1)}} {{ShelfPreview(2)}}
     </div>
-
-    {% for i in range(30) %}
-
-        {% set rand = range(1,10) | random %}
-
-        {% if rand == 1 and i > 1 %} 
-
-            <small>recommended shelf</small>
-            <div style="display:flex;flex-direction:row;justify-content:space-between;">
-                {{ShelfPreview(i+1)}}
-                {{ShelfPreview(i+1)}}
-            </div>
-
-        {% else %}
-
-            {{PostPreview(i+1)}}
-
-        {% endif %}
-
-    {%endfor%}
+    <div class="board-recommendation"> 
+        {{BoardPreview()}}
+        {{BoardPreview()}}
+    </div>
+    <div class="post-recommendation"> 
+        {{PostPreview(1)}}
+        {{PostPreview(2)}}
+        {{PostPreview(3)}}
+        {{PostPreview(4)}}
+    </div>
+</div>
 
 {% endblock %}
 
 
-
+<!-- 
 {% block sidebar %}
 
-{% endblock %}
+{% endblock %} -->

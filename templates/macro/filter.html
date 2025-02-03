@@ -1,0 +1,30 @@
+
+{% macro ContentFilter() %}
+
+<style>
+
+    .filters-section {
+        width: 100%;
+        display: flex;
+        gap: 2%;
+        justify-content: center;
+        transform: translateY(40%);
+        position: sticky;
+
+        position: sticky;
+    }
+
+    .filters-section a {
+        color: darkblue;
+    }
+
+</style>
+
+
+<div class="filters-section">
+    <a href="#">Top</a>
+    <a href="#">Recent</a>
+    <a href="#">Trending</a>
+</div>
+
+{% endmacro %}

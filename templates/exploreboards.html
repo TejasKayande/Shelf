@@ -2,19 +2,20 @@
 {% extends 'base.html' %}
 {% from 'macro/menu.html' import Menu %}
 {% from 'macro/board.html' import BoardPreview %}
+{% from 'macro/filter.html' import ContentFilter %}
 
 
 {% block css %} 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}"> -->
 {% endblock %}
 
 
 
 {% block menu %} 
 
-    {{Menu()}}
+{{Menu()}}
 
 {% endblock %}
 
@@ -22,18 +23,14 @@
 
 {% block content %}
 
-    <div class="filters-section">
-        <a href="/ExploreBoards">Books</a>
-        <a href="/ExploreShelfs">Shelfs</a>
-        <a href="#">Boards</a>
-    </div>
+{{ContentFilter()}}
 
-    {% for i in range(30) %}
-        <div style="width:70%;display:flex;flex-direction:row;justify-content:space-between;gap:10%;">
-            {{BoardPreview(i+1)}}
-            {{BoardPreview(i+1)}}
-        </div>
-    {%endfor%}
+{% for i in range(30) %}
+    <div style="width:70%;display:flex;flex-direction:row;justify-content:space-between;gap:10%;">
+        {{BoardPreview(i+1)}}
+        {{BoardPreview(i+1)}}
+    </div>
+{%endfor%}
 
 {% endblock %}
 
