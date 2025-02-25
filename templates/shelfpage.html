@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 {% from 'macro/menu.html' import Menu %}
+{% from 'macro/book.html' import BookPreview %}
 
 {% block css %} 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/shelfpage.css') }}">
@@ -26,11 +27,9 @@
 
 <div class="shelf-content"> 
 
-{% for i in range(50) %}
-
-    <p>Book {{i}} -- Author {{i}}</p>
-
-{%endfor%}
+{% for i in range(40) %}
+    {{ BookPreview(i) }}
+{% endfor %}
 
 </div>
 
@@ -40,6 +39,4 @@
 
 {% block sidebar %}
 
-<p>hhere is some information about the shelf herehere is some information about the shelf her
-    eere is some information about the shelf here</p>
 {% endblock %}

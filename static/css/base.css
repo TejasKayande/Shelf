@@ -59,7 +59,9 @@ main {
     margin-left: 83%;
     margin-top: 2%;
 
-    width: 15%;
+    padding: 1%;
+
+    width: 13%;
     height: calc(100vh - 20%);
 
     position: fixed;
@@ -73,4 +75,9 @@ main {
     justify-content: space-between;
 
     z-index: 500;
+}
+
+::-webkit-scrollbar {
+    width: 1%;
+    height: 1%;
 }
